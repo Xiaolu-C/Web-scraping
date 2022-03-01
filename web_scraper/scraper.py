@@ -1,4 +1,5 @@
 from multiprocessing import connection
+from nturl2path import url2pathname
 from bs4 import BeautifulSoup
 import requests
 import datetime
@@ -21,6 +22,7 @@ def check_price(URL, user_id):
     title = title.strip()
     price = price.strip()[1:]
     today = datetime.date.today()
+    url = URL
 
 
     # print(user_id, title, price, today)
@@ -31,7 +33,7 @@ def check_price(URL, user_id):
     cursor = connection.cursor()
 
     with connection:
-        cursor.execute("Insert into products (User_id, Date, Title, Price) values (?,?,?,?)", (user_id, today, title, price))
+        cursor.execute("Insert into products (User_id, Date, Title, Price, Url) values (?,?,?,?,?)", (user_id, today, title, price,url))
    
 
 

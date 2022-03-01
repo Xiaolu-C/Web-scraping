@@ -35,7 +35,7 @@
                         {% for product in products %}
                             <tr>
                                 <td>{{ product[1] }}</td>
-                                <td>{{ product[2] }}</td>
+                                <td><a href="{{product[4]}}">{{product[2] }}</a></td>
                                 <td>{{ product[3]}}</td>
                             </tr>
                         {% endfor %}

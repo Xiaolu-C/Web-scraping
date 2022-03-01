@@ -14,3 +14,8 @@
 -- DELETE TABLE users;
 
 
+--DELETE FROM products
+--WHERE User_id="6";
+
+-- ALTER TABLE products
+-- ADD Url TEXT;
